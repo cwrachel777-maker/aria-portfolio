@@ -1,4 +1,5 @@
 import SectionWrapper from '../components/common/SectionWrapper';
+import { AnimateOnScroll } from '../components/common/AnimateOnScroll';
 import profileImage from '../assets/part1-profile.jpg';
 
 export default function Home() {
@@ -7,21 +8,21 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center min-h-[80vh]">
           {/* Photo */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <AnimateOnScroll animation="fade-in" delay={0} className="lg:col-span-5 order-2 lg:order-1">
             <div className="aspect-[3/4] overflow-hidden">
-              <img 
-                src={profileImage} 
-                alt="Aria Cao" 
+              <img
+                src={profileImage}
+                alt="Aria Cao"
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </AnimateOnScroll>
 
           {/* Content */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <AnimateOnScroll animation="fade-in-slide-up" delay={200} className="lg:col-span-7 order-1 lg:order-2">
             <div className="flex items-start gap-8">
               <span className="line-number text-xs text-gray-400">ARIA CAO</span>
-              
+
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-8">
                   <span className="circle-number">01</span>
@@ -62,7 +63,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </AnimateOnScroll>
         </div>
       </div>
     </SectionWrapper>

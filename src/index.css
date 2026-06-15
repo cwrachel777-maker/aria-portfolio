@@ -35,3 +35,12 @@
   text-orientation: mixed;
   letter-spacing: 0.2em;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-slide-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

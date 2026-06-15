@@ -1,4 +1,5 @@
 import SectionWrapper from '../components/common/SectionWrapper';
+import { AnimateOnScroll } from '../components/common/AnimateOnScroll';
 import { useNavigate } from 'react-router-dom';
 
 // 导入项目封面图
@@ -45,106 +46,117 @@ export default function Projects() {
   return (
     <SectionWrapper id="projects">
       <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex items-start gap-8 mb-16">
-          <span className="line-number text-xs text-gray-400">PROJECTS</span>
-          
-          <div className="flex-1">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="circle-number">03</span>
+        <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
+          <div className="flex items-start gap-8 mb-16">
+            <span className="line-number text-xs text-gray-400">PROJECTS</span>
+
+            <div className="flex-1">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="circle-number">03</span>
+              </div>
+
+              <h2 className="font-display text-4xl lg:text-5xl font-light text-gray-900 mb-4">
+                项目经历
+              </h2>
+              <p className="text-gray-600">
+                从标准制定到创意执行，从培训体系到空间设计
+              </p>
             </div>
-            
-            <h2 className="font-display text-4xl lg:text-5xl font-light text-gray-900 mb-4">
-              项目经历
-            </h2>
-            <p className="text-gray-600">
-              从标准制定到创意执行，从培训体系到空间设计
-            </p>
           </div>
-        </div>
+        </AnimateOnScroll>
 
         {/* A板块 */}
         <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="font-display text-4xl font-light text-gray-300">A</span>
-            <span className="text-sm text-gray-500 tracking-wide">VISUAL SYSTEM</span>
-          </div>
-          
+          <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="font-display text-4xl font-light text-gray-300">A</span>
+              <span className="text-sm text-gray-500 tracking-wide">VISUAL SYSTEM</span>
+            </div>
+          </AnimateOnScroll>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {groupedProjects.A.map((project) => (
-              <button
-                key={project.id}
-                onClick={() => navigate(project.route)}
-                className="group cursor-pointer text-left"
-              >
-                <div className="aspect-square overflow-hidden mb-3">
-                  <img 
-                    src={project.cover} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="text-sm text-gray-700 group-hover:text-black transition-colors">
-                  {project.title}
-                </div>
-              </button>
+            {groupedProjects.A.map((project, index) => (
+              <AnimateOnScroll key={project.id} animation="fade-in-slide-up" delay={index * 100}>
+                <button
+                  onClick={() => navigate(project.route)}
+                  className="group cursor-pointer text-left"
+                >
+                  <div className="aspect-square overflow-hidden mb-3">
+                    <img
+                      src={project.cover}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="text-sm text-gray-700 group-hover:text-black transition-colors">
+                    {project.title}
+                  </div>
+                </button>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
 
         {/* B板块 */}
         <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="font-display text-4xl font-light text-gray-300">B</span>
-            <span className="text-sm text-gray-500 tracking-wide">CREATIVE PLANNING</span>
-          </div>
-          
+          <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="font-display text-4xl font-light text-gray-300">B</span>
+              <span className="text-sm text-gray-500 tracking-wide">CREATIVE PLANNING</span>
+            </div>
+          </AnimateOnScroll>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {groupedProjects.B.map((project) => (
-              <button
-                key={project.id}
-                onClick={() => navigate(project.route)}
-                className="group cursor-pointer text-left"
-              >
-                <div className="aspect-square overflow-hidden mb-3">
-                  <img 
-                    src={project.cover} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="text-sm text-gray-700 group-hover:text-black transition-colors">
-                  {project.title}
-                </div>
-              </button>
+            {groupedProjects.B.map((project, index) => (
+              <AnimateOnScroll key={project.id} animation="fade-in-slide-up" delay={index * 100}>
+                <button
+                  onClick={() => navigate(project.route)}
+                  className="group cursor-pointer text-left"
+                >
+                  <div className="aspect-square overflow-hidden mb-3">
+                    <img
+                      src={project.cover}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="text-sm text-gray-700 group-hover:text-black transition-colors">
+                    {project.title}
+                  </div>
+                </button>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
 
         {/* C板块 */}
         <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="font-display text-4xl font-light text-gray-300">C</span>
-            <span className="text-sm text-gray-500 tracking-wide">SPACE DESIGN</span>
-          </div>
-          
+          <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="font-display text-4xl font-light text-gray-300">C</span>
+              <span className="text-sm text-gray-500 tracking-wide">SPACE DESIGN</span>
+            </div>
+          </AnimateOnScroll>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {groupedProjects.C.map((project) => (
-              <button
-                key={project.id}
-                onClick={() => navigate(project.route)}
-                className="group cursor-pointer text-left"
-              >
-                <div className="aspect-square overflow-hidden mb-3">
-                  <img 
-                    src={project.cover} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="text-sm text-gray-700 group-hover:text-black transition-colors">
-                  {project.title}
-                </div>
-              </button>
+            {groupedProjects.C.map((project, index) => (
+              <AnimateOnScroll key={project.id} animation="fade-in-slide-up" delay={index * 100}>
+                <button
+                  onClick={() => navigate(project.route)}
+                  className="group cursor-pointer text-left"
+                >
+                  <div className="aspect-square overflow-hidden mb-3">
+                    <img
+                      src={project.cover}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="text-sm text-gray-700 group-hover:text-black transition-colors">
+                    {project.title}
+                  </div>
+                </button>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>

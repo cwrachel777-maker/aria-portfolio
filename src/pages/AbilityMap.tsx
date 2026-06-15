@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import SectionWrapper from '../components/common/SectionWrapper';
+import { AnimateOnScroll } from '../components/common/AnimateOnScroll';
 import { useNavigate } from 'react-router-dom';
 
 const abilityBlocks = [
@@ -44,100 +45,106 @@ export default function AbilityMap() {
   return (
     <SectionWrapper id="ability">
       <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex items-start gap-8 mb-16">
-          <span className="line-number text-xs text-gray-400">ABILITY</span>
-          
-          <div className="flex-1">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="circle-number">02</span>
-            </div>
-            
-            <h2 className="font-display text-4xl lg:text-5xl font-light text-gray-900 mb-4">
-              能力地图
-            </h2>
-            <p className="text-gray-600">
-              三大核心能力，驱动视觉价值落地
-            </p>
-          </div>
-        </div>
+        <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
+          <div className="flex items-start gap-8 mb-16">
+            <span className="line-number text-xs text-gray-400">ABILITY</span>
 
-        <div className={`relative flex items-center justify-center ${isDesktop ? 'min-h-[700px]' : 'min-h-[500px]'}`} style={isDesktop ? { transform: 'translateY(-240px)' } : {}}>
-          <div 
-            className="absolute rounded-full border border-gray-300 border-dashed"
-            style={{ width: circleRadius * 4, height: circleRadius * 4 }}
-          ></div>
-
-          <div 
-            className="absolute rounded-full border border-gray-200"
-            style={{ width: circleRadius * 3.2, height: circleRadius * 3.2 }}
-          ></div>
-
-          <div 
-            className="absolute rounded-full border border-gray-200 border-dashed"
-            style={{ width: circleRadius * 2.4, height: circleRadius * 2.4 }}
-          ></div>
-
-          <div 
-            className="absolute rounded-full border border-gray-200"
-            style={{ width: circleRadius * 1.2, height: circleRadius * 1.2 }}
-          ></div>
-
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
-            <div
-              key={deg}
-              className={`absolute ${i % 2 === 0 ? 'border-l border-gray-200' : 'border-l border-gray-200 border-dashed'}`}
-              style={{
-                transform: `rotate(${deg}deg)`,
-                transformOrigin: 'bottom center',
-                bottom: `calc(50% - ${circleRadius * 0.6}px)`,
-                left: '50%',
-                marginLeft: '-0.5px',
-                height: isDesktop ? '400px' : '250px'
-              }}
-            />
-          ))}
-
-          {abilityBlocks.map((block, index) => {
-            const rad = angle(index);
-            const x = Math.cos(rad) * centerOffset;
-            const y = Math.sin(rad) * centerOffset;
-
-            return (
-              <div
-                key={block.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2"
-                style={{ 
-                  left: `calc(50% + ${x}px)`, 
-                  top: `calc(50% + ${y}px)`,
-                }}
-              >
-                <button
-                  onClick={() => handleBlockClick(block.route)}
-                  className={`group rounded-full bg-gray-200/70 border border-gray-300 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer ${
-                    isDesktop ? 'w-80 h-80' : 'w-48 h-48'
-                  }`}
-                >
-                  <h3 className={`font-display font-semibold text-gray-900 mb-2 lg:mb-6 text-center px-4 lg:px-8 ${
-                    isDesktop ? 'text-xl' : 'text-sm'
-                  }`}>
-                    {block.title}
-                  </h3>
-                  
-                  <div className={`flex flex-col items-center gap-1 lg:gap-2 ${isDesktop ? '' : 'px-2'}`}>
-                    {block.keywords.map((keyword, idx) => (
-                      <span
-                        key={idx}
-                        className={`text-gray-600 text-center ${isDesktop ? 'text-xs px-4' : 'text-[10px] px-1'}`}
-                      >
-                        {keyword}
-                      </span>
-                    ))}
-                  </div>
-                </button>
+            <div className="flex-1">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="circle-number">02</span>
               </div>
-            );
-          })}
-        </div>
+
+              <h2 className="font-display text-4xl lg:text-5xl font-light text-gray-900 mb-4">
+                能力地图
+              </h2>
+              <p className="text-gray-600">
+                三大核心能力，驱动视觉价值落地
+              </p>
+            </div>
+          </div>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll animation="fade-in" delay={200}>
+          <div className={`relative flex items-center justify-center ${isDesktop ? 'min-h-[700px]' : 'min-h-[500px]'}`} style={isDesktop ? { transform: 'translateY(-240px)' } : {}}>
+            <div
+              className="absolute rounded-full border border-gray-300 border-dashed"
+              style={{ width: circleRadius * 4, height: circleRadius * 4 }}
+            ></div>
+
+            <div
+              className="absolute rounded-full border border-gray-200"
+              style={{ width: circleRadius * 3.2, height: circleRadius * 3.2 }}
+            ></div>
+
+            <div
+              className="absolute rounded-full border border-gray-200 border-dashed"
+              style={{ width: circleRadius * 2.4, height: circleRadius * 2.4 }}
+            ></div>
+
+            <div
+              className="absolute rounded-full border border-gray-200"
+              style={{ width: circleRadius * 1.2, height: circleRadius * 1.2 }}
+            ></div>
+
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
+              <div
+                key={deg}
+                className={`absolute ${i % 2 === 0 ? 'border-l border-gray-200' : 'border-l border-gray-200 border-dashed'}`}
+                style={{
+                  transform: `rotate(${deg}deg)`,
+                  transformOrigin: 'bottom center',
+                  bottom: `calc(50% - ${circleRadius * 0.6}px)`,
+                  left: '50%',
+                  marginLeft: '-0.5px',
+                  height: isDesktop ? '400px' : '250px'
+                }}
+              />
+            ))}
+
+            {abilityBlocks.map((block, index) => {
+              const rad = angle(index);
+              const x = Math.cos(rad) * centerOffset;
+              const y = Math.sin(rad) * centerOffset;
+
+              return (
+                <div
+                  key={block.id}
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    left: `calc(50% + ${x}px)`,
+                    top: `calc(50% + ${y}px)`,
+                  }}
+                >
+                  <AnimateOnScroll animation="fade-in-slide-up" delay={300 + index * 200}>
+                    <button
+                      onClick={() => handleBlockClick(block.route)}
+                      className={`group rounded-full bg-gray-200/70 border border-gray-300 flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer ${
+                        isDesktop ? 'w-80 h-80' : 'w-48 h-48'
+                      }`}
+                    >
+                      <h3 className={`font-display font-semibold text-gray-900 mb-2 lg:mb-6 text-center px-4 lg:px-8 ${
+                        isDesktop ? 'text-xl' : 'text-sm'
+                      }`}>
+                        {block.title}
+                      </h3>
+
+                      <div className={`flex flex-col items-center gap-1 lg:gap-2 ${isDesktop ? '' : 'px-2'}`}>
+                        {block.keywords.map((keyword, idx) => (
+                          <span
+                            key={idx}
+                            className={`text-gray-600 text-center ${isDesktop ? 'text-xs px-4' : 'text-[10px] px-1'}`}
+                          >
+                            {keyword}
+                          </span>
+                        ))}
+                      </div>
+                    </button>
+                  </AnimateOnScroll>
+                </div>
+              );
+            })}
+          </div>
+        </AnimateOnScroll>
       </div>
     </SectionWrapper>
   );
