@@ -21,7 +21,7 @@ import CProject from "./pages/projectDetail/CProject";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/aria-portfolio/">
       <div className="min-h-screen bg-white">
         <Header />
 
