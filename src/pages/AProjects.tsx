@@ -17,6 +17,7 @@ export default function AProjects() {
             <p className="text-gray-600">
               从标准制定到持续升级，联动跨部门驱动视觉价值落地
             </p>
+            <div className="ray-line-category" />
           </div>
         </AnimateOnScroll>
 

@@ -17,6 +17,7 @@ export default function BProjects() {
             <p className="text-gray-600">
               以上海旗舰店为核心，通过月度沙龙视觉企划，打造持续变化的沉浸式品牌体验
             </p>
+            <div className="ray-line-category" />
           </div>
         </AnimateOnScroll>
 

@@ -47,7 +47,10 @@ export default function AbilityMap() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
           <div className="flex items-start gap-8 mb-16">
-            <span className="line-number text-xs text-gray-400">ABILITY</span>
+            <div className="relative">
+              <span className="line-number text-xs text-gray-400">ABILITY</span>
+              <div className="ray-line-section-v" />
+            </div>
 
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-4">
@@ -66,39 +69,40 @@ export default function AbilityMap() {
 
         <AnimateOnScroll animation="fade-in" delay={200}>
           <div className={`relative flex items-center justify-center ${isDesktop ? 'min-h-[700px]' : 'min-h-[500px]'}`} style={isDesktop ? { transform: 'translateY(-240px)' } : {}}>
-            <div
-              className="absolute rounded-full border border-gray-300 border-dashed"
-              style={{ width: circleRadius * 4, height: circleRadius * 4 }}
-            ></div>
-
-            <div
-              className="absolute rounded-full border border-gray-200"
-              style={{ width: circleRadius * 3.2, height: circleRadius * 3.2 }}
-            ></div>
-
-            <div
-              className="absolute rounded-full border border-gray-200 border-dashed"
-              style={{ width: circleRadius * 2.4, height: circleRadius * 2.4 }}
-            ></div>
-
-            <div
-              className="absolute rounded-full border border-gray-200"
-              style={{ width: circleRadius * 1.2, height: circleRadius * 1.2 }}
-            ></div>
+            {[
+              { size: circleRadius * 4, cls: 'border-gray-300 border-dashed', delay: 0.3 },
+              { size: circleRadius * 3.2, cls: 'border-gray-200', delay: 0.55 },
+              { size: circleRadius * 2.4, cls: 'border-gray-200 border-dashed', delay: 0.8 },
+              { size: circleRadius * 1.2, cls: 'border-gray-200', delay: 1.05 },
+            ].map((circle, i) => (
+              <div
+                key={i}
+                className={`absolute rounded-full border ${circle.cls} ray-circle-expand`}
+                style={{
+                  width: circle.size,
+                  height: circle.size,
+                  animationDelay: `${circle.delay}s`
+                }}
+              ></div>
+            ))}
 
             {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
               <div
                 key={deg}
-                className={`absolute ${i % 2 === 0 ? 'border-l border-gray-200' : 'border-l border-gray-200 border-dashed'}`}
+                className="absolute"
                 style={{
                   transform: `rotate(${deg}deg)`,
                   transformOrigin: 'bottom center',
                   bottom: `calc(50% - ${circleRadius * 0.6}px)`,
                   left: '50%',
-                  marginLeft: '-0.5px',
                   height: isDesktop ? '400px' : '250px'
                 }}
-              />
+              >
+                <div
+                  className={`h-full ray-radial-expand ${i % 2 === 0 ? 'border-l border-gray-200' : 'border-l border-gray-200 border-dashed'}`}
+                  style={{ animationDelay: `${0.6 + i * 0.1}s` }}
+                />
+              </div>
             ))}
 
             {abilityBlocks.map((block, index) => {

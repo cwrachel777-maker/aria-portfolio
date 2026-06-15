@@ -48,7 +48,10 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
           <div className="flex items-start gap-8 mb-16">
-            <span className="line-number text-xs text-gray-400">PROJECTS</span>
+            <div className="relative">
+              <span className="line-number text-xs text-gray-400">PROJECTS</span>
+              <div className="ray-line-section-v" />
+            </div>
 
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-4">
@@ -58,6 +61,7 @@ export default function Projects() {
               <h2 className="font-display text-4xl lg:text-5xl font-light text-gray-900 mb-4">
                 项目经历
               </h2>
+              <div className="ray-line-section" />
               <p className="text-gray-600">
                 从标准制定到创意执行，从培训体系到空间设计
               </p>

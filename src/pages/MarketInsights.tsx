@@ -22,7 +22,10 @@ export default function MarketInsights() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
           <div className="flex items-start gap-8 mb-16">
-            <span className="line-number text-xs text-gray-400">INSIGHTS</span>
+            <div className="relative">
+              <span className="line-number text-xs text-gray-400">INSIGHTS</span>
+              <div className="ray-line-section-v" />
+            </div>
 
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-4">
@@ -32,6 +35,7 @@ export default function MarketInsights() {
               <h2 className="font-display text-4xl lg:text-5xl font-light text-gray-900 mb-4">
                 市场洞察
               </h2>
+              <div className="ray-line-section" />
               <p className="text-gray-600 max-w-2xl">
                 持续关注行业趋势，并将日常观察与思考记录于小红书，以此保持市场敏锐度。
               </p>

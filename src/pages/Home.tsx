@@ -20,8 +20,11 @@ export default function Home() {
 
           {/* Content */}
           <AnimateOnScroll animation="fade-in-slide-up" delay={200} className="lg:col-span-7 order-1 lg:order-2">
-            <div className="flex items-start gap-8">
-              <span className="line-number text-xs text-gray-400">ARIA CAO</span>
+            <div className="flex items-start gap-8 relative">
+              <div className="relative">
+                <span className="line-number text-xs text-gray-400">ARIA CAO</span>
+                <div className="ray-line-vertical" />
+              </div>
 
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-8">
@@ -29,12 +32,14 @@ export default function Home() {
                 </div>
 
                 {/* 第一优先级 */}
-                <h1 className="font-display text-4xl lg:text-6xl font-light text-gray-900 mb-8 tracking-wide leading-tight flex flex-wrap items-baseline gap-x-3">
+                <h1 className="font-display text-4xl lg:text-6xl font-light text-gray-900 mb-4 tracking-wide leading-tight flex flex-wrap items-baseline gap-x-3">
                   <span>空间设计</span>
                   <span className="text-gray-400">×</span>
                   <span>服装陈列</span>
                   <span className="text-2xl lg:text-4xl text-gray-500">复合经验</span>
                 </h1>
+
+                <div className="ray-line" />
 
                 {/* 第二优先级 */}
                 <div className="flex flex-wrap items-center gap-4 mb-8">
@@ -56,11 +61,7 @@ export default function Home() {
                   <p>擅长从0到1搭建全国陈列标准。</p>
                 </div>
 
-                <div className="pt-8 border-t border-gray-200">
-                  <p className="text-sm text-gray-400 tracking-wide">
-                    SCROLL DOWN TO EXPLORE
-                  </p>
-                </div>
+
               </div>
             </div>
           </AnimateOnScroll>
