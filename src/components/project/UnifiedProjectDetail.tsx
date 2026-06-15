@@ -62,7 +62,6 @@ export default function UnifiedProjectDetail({ project, backRoute }: UnifiedProj
               <h1 className="font-display text-2xl lg:text-3xl font-light text-gray-900 mb-4">
                 {project.title}
               </h1>
-              <div className="ray-line-detail" />
               <p className="text-sm text-gray-600">
                 {project.subtitle}
               </p>

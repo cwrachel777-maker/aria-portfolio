@@ -221,9 +221,9 @@
 }
 
 .ray-circle-expand {
-  -webkit-mask-image: conic-gradient(from -90deg, black 0deg, black var(--circle-reveal), transparent var(--circle-reveal));
-  mask-image: conic-gradient(from -90deg, black 0deg, black var(--circle-reveal), transparent var(--circle-reveal));
-  animation: ray-circle-reveal-anim 1s ease-out forwards;
+  -webkit-mask-image: conic-gradient(from 180deg, black 0deg, black var(--circle-reveal), transparent var(--circle-reveal));
+  mask-image: conic-gradient(from 180deg, black 0deg, black var(--circle-reveal), transparent var(--circle-reveal));
+  animation: ray-circle-reveal-anim 1.2s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 @keyframes ray-circle-reveal-anim {
@@ -443,15 +443,15 @@
   }
   .ray-line-vertical {
     right: -12px;
-    bottom: -100px;
+    bottom: 0;
   }
   .ray-line-section-v {
     right: -12px;
-    bottom: -80px;
+    bottom: 0;
   }
   .ray-line-section-v-short {
     right: -12px;
-    bottom: -40px;
+    bottom: 0;
   }
   .ray-line-section-angled {
     margin-left: -24px;

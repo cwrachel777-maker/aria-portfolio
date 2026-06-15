@@ -47,10 +47,7 @@ export default function AbilityMap() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
           <div className="flex items-start gap-8 mb-16">
-            <div className="relative">
-              <span className="line-number text-xs text-gray-400">ABILITY</span>
-              <div className="ray-line-section-v" />
-            </div>
+            <span className="line-number text-xs text-gray-400">ABILITY</span>
 
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-4">
@@ -70,18 +67,20 @@ export default function AbilityMap() {
         <AnimateOnScroll animation="fade-in" delay={200}>
           <div className={`relative flex items-center justify-center ${isDesktop ? 'min-h-[700px]' : 'min-h-[500px]'}`} style={isDesktop ? { transform: 'translateY(-240px)' } : {}}>
             {[
-              { size: circleRadius * 4, cls: 'border-gray-300 border-dashed', delay: 0.3 },
-              { size: circleRadius * 3.2, cls: 'border-gray-200', delay: 0.55 },
-              { size: circleRadius * 2.4, cls: 'border-gray-200 border-dashed', delay: 0.8 },
-              { size: circleRadius * 1.2, cls: 'border-gray-200', delay: 1.05 },
+              { size: circleRadius * 4, cls: 'border-gray-400 border-dashed', delay: 0.3, duration: '1.8s' },
+              { size: circleRadius * 3.2, cls: 'border-gray-300', delay: 0.55, duration: '1.5s' },
+              { size: circleRadius * 2.4, cls: 'border-gray-300 border-dashed', delay: 0.8, duration: '1.2s' },
+              { size: circleRadius * 1.2, cls: 'border-gray-300', delay: 1.05, duration: '1s' },
             ].map((circle, i) => (
               <div
                 key={i}
-                className={`absolute rounded-full border ${circle.cls} ray-circle-expand`}
+                className={`absolute rounded-full ${circle.cls} ray-circle-expand`}
                 style={{
                   width: circle.size,
                   height: circle.size,
-                  animationDelay: `${circle.delay}s`
+                  borderWidth: '1.3px',
+                  animationDelay: `${circle.delay}s`,
+                  animationDuration: circle.duration
                 }}
               ></div>
             ))}

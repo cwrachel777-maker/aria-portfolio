@@ -17,7 +17,6 @@ export default function CProjects() {
             <p className="text-gray-600">
               从概念策划到空间建模，掌握零售空间与展陈落地的全流程
             </p>
-            <div className="ray-line-category" />
           </div>
         </AnimateOnScroll>
 

@@ -9,10 +9,7 @@ export default function About() {
       <div className="max-w-5xl mx-auto px-6 py-20">
         <AnimateOnScroll animation="fade-in-slide-up" delay={0}>
           <div className="flex items-start gap-8 mb-12">
-            <div className="relative">
-              <span className="line-number text-xs text-gray-400">ABOUT</span>
-              <div className="ray-line-section-v-short" />
-            </div>
+            <span className="line-number text-xs text-gray-400">ABOUT</span>
 
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-4">
@@ -22,7 +19,6 @@ export default function About() {
               <h2 className="font-display text-3xl lg:text-4xl font-light text-gray-900 mb-4">
                 关于我
               </h2>
-              <div className="ray-line-section" />
             </div>
           </div>
         </AnimateOnScroll>
