@@ -1,8 +1,15 @@
 # Dependencies
 node_modules/
 
-# Build output (we commit dist separately for GitHub Pages)
-# dist/
+# Build output
+dist/
+
+# Trae IDE
+.trae/
+
+# Uploaded archives
+Aria_Portfolio/
+*.zip
 
 # Logs
 *.log

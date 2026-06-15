@@ -6,17 +6,11 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   base: '/aria-portfolio/',
   build: {
-    sourcemap: 'hidden',
+    sourcemap: false,
     assetsInlineLimit: 0,
   },
   plugins: [
-    react({
-      babel: {
-        plugins: [
-          'react-dev-locator',
-        ],
-      },
-    }), 
+    react(),
     tsconfigPaths()
   ],
 })
