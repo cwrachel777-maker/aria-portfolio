@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from "vite-tsconfig-paths";
+import { copyFileSync } from 'fs';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,6 +12,12 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    tsconfigPaths()
+    tsconfigPaths(),
+    {
+      name: 'copy-404',
+      closeBundle: () => {
+        copyFileSync('dist/index.html', 'dist/404.html');
+      },
+    },
   ],
 })
