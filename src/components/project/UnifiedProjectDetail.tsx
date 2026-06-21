@@ -37,7 +37,7 @@ export default function UnifiedProjectDetail({ project, backRoute }: UnifiedProj
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <ProjectDetailNav
         projectName={`${project.id} · ${project.title}`}
         currentPage={currentPage}
@@ -47,9 +47,10 @@ export default function UnifiedProjectDetail({ project, backRoute }: UnifiedProj
         onNextPage={handleNextPage}
       />
 
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        {/* Content section - 左右两栏布局 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="flex-1 flex items-center">
+        <div className="max-w-7xl mx-auto px-6 py-12 w-full">
+          {/* Content section - 左右两栏布局 */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left - text content */}
           <AnimateOnScroll animation="fade-in-slide-up" delay={0} className="lg:col-span-4">
             {/* Project header */}
@@ -154,6 +155,7 @@ export default function UnifiedProjectDetail({ project, backRoute }: UnifiedProj
             )}
           </AnimateOnScroll>
         </div>
+      </div>
       </div>
     </div>
   );

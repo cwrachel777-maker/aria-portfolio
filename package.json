@@ -8,7 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "check": "tsc -b --noEmit"
+    "check": "tsc -b --noEmit",
+    "pdf-generate": "node scripts/generate-pdf.js",
+    "pdf-merge": "node scripts/merge-pdf.js",
+    "pdf": "npm run pdf-generate && npm run pdf-merge"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -31,7 +34,9 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "pdf-lib": "^1.17.1",
     "postcss": "^8.5.3",
+    "puppeteer": "^25.1.0",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
