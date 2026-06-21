@@ -5,7 +5,7 @@ import Footer from "./components/layout/Footer";
 // Pages
 import Home from "./pages/Home";
 import AbilityMap from "./pages/AbilityMap";
-import Projects from "./pages/Projects";
+import Projects, { ProjectsPage2 } from "./pages/Projects";
 import AProjects from "./pages/AProjects";
 import BProjects from "./pages/BProjects";
 import CProjects from "./pages/CProjects";
@@ -31,6 +31,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/ability" element={<AbilityMap />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/page2" element={<ProjectsPage2 />} />
             <Route path="/insights" element={<MarketInsights />} />
             <Route path="/about" element={<About />} />
 

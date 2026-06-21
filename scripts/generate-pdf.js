@@ -17,10 +17,8 @@ const pages = [
   // 能力地图
   { name: '02-ability', url: '/ability', title: '能力地图' },
   
-  // 项目经历总页 - 第一页（A板块）
-  { name: '03-projects-1', url: '/projects', title: '项目经历 - A板块', scrollY: 0 },
-  // 项目经历总页 - 第二页（B+C板块）
-  { name: '03-projects-2', url: '/projects', title: '项目经历 - B/C板块', scrollY: 600 },
+  // 项目经历总页
+  { name: '03-projects', url: '/projects', title: '项目经历' },
   
   // A板块项目
   { name: '04-a1', url: '/projects/a/a1', title: 'A1 - 品牌专卖店形象规范指南' },
@@ -80,14 +78,6 @@ async function generatePDF() {
       
       // 等待页面加载完成
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // 如果需要滚动到特定位置
-      if (pageInfo.scrollY) {
-        await page.evaluate((scrollY) => {
-          window.scrollTo(0, scrollY);
-        }, pageInfo.scrollY);
-        await new Promise(resolve => setTimeout(resolve, 500));
-      }
       
       // 截图
       const screenshotPath = path.join(outputDir, `${pageInfo.name}.png`);

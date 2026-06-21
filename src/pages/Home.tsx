@@ -56,6 +56,12 @@ export default function Home() {
                   <p>擅长从0到1搭建全国陈列标准。</p>
                 </div>
 
+                {/* PDF备注 */}
+                <div className="mt-8 pt-6 border-t border-gray-100">
+                  <p className="text-xs text-gray-400 leading-relaxed">
+                    作品集原为网页版，PDF静态导出无法呈现细节。若时间允许，可扫描简历右上方二维码或点击链接查看网页版，效果更佳。
+                  </p>
+                </div>
 
               </div>
             </div>

@@ -47,10 +47,10 @@ export default function UnifiedProjectDetail({ project, backRoute }: UnifiedProj
         onNextPage={handleNextPage}
       />
 
-      <div className="flex-1 flex items-center">
-        <div className="max-w-7xl mx-auto px-6 py-12 w-full">
+      <div className="flex-1 flex items-center py-12">
+        <div className="max-w-7xl mx-auto px-6 w-full">
           {/* Content section - 左右两栏布局 */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left - text content */}
           <AnimateOnScroll animation="fade-in-slide-up" delay={0} className="lg:col-span-4">
             {/* Project header */}
@@ -154,8 +154,8 @@ export default function UnifiedProjectDetail({ project, backRoute }: UnifiedProj
               </div>
             )}
           </AnimateOnScroll>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );
