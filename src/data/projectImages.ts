@@ -7,8 +7,8 @@ import a1Img3 from '../assets/part3-a1-loop-003.jpeg';
 import a1Img4 from '../assets/part3-a1-loop-004.jpeg';
 
 import a2Img1 from '../assets/part3-a2-training-timeline.jpeg';
-import a2Img2 from '../assets/part3-a2-training-002.jpeg';
-import a2Img3 from '../assets/part3-a2-training-003.jpeg';
+import a2Img2 from '../assets/a2-new-1.png';
+import a2Img3 from '../assets/a2-new-2.png';
 
 import a3Img1 from '../assets/part3-a3-upgrade-workflow.jpeg';
 
