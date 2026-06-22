@@ -16,7 +16,7 @@ export default defineConfig({
     {
       name: 'copy-404',
       closeBundle: () => {
-        copyFileSync('dist/index.html', 'dist/404.html');
+        copyFileSync('docs/index.html', 'docs/404.html');
       },
     },
   ],
