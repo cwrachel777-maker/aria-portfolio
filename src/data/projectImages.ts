@@ -7,6 +7,8 @@ import a1Img3 from '../assets/part3-a1-loop-003.jpeg';
 import a1Img4 from '../assets/part3-a1-loop-004.jpeg';
 
 import a2Img1 from '../assets/part3-a2-training-timeline.jpeg';
+import a2Img2 from '../assets/part3-a2-training-002.jpeg';
+import a2Img3 from '../assets/part3-a2-training-003.jpeg';
 
 import a3Img1 from '../assets/part3-a3-upgrade-workflow.jpeg';
 
@@ -37,7 +39,7 @@ import c4Img1 from '../assets/part3-c4-narrative-display-detail.jpeg';
 
 export const projectImages: Record<string, string[]> = {
   'A1': [a1Img1, a1Img2, a1Img3, a1Img4],
-  'A2': [a2Img1],
+  'A2': [a2Img1, a2Img2, a2Img3],
   'A3': [a3Img1],
   'A4': [a4Img1, a4Img2],
   'B1': [b1Img1, b1Img2, b1Img3, b1Img4, b1Img5, b1Img6, b1Img7, b1Img8],

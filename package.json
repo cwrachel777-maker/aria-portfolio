@@ -8,10 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "check": "tsc -b --noEmit",
-    "pdf-generate": "node scripts/generate-pdf.js",
-    "pdf-merge": "node scripts/merge-pdf.js",
-    "pdf": "npm run pdf-generate && npm run pdf-merge"
+    "check": "tsc -b --noEmit"
   },
   "dependencies": {
     "clsx": "^2.1.1",
